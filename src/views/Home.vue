@@ -3,7 +3,7 @@
     <dataTitle :title="this.title" :date="this.date" />
     <dataBoxes :stats="this.stats" />
     <selectCountry @getCountry="changeCountry" :countries="this.countries" />
-    <button @click="clearCountry" v-if="this.stats.Country" class="bg-green-700 rounded py-2 px-4 text-white hover:bg-green-800 focus:outline-none">Clear Country</button>
+    <button @click="clearCountry" v-if="this.stats.Country" class="bg-pink-700 rounded py-2 px-4 text-white hover:bg-pink-800 focus:outline-none mb-10">Clear Country</button>
   </main>
   <main v-else>
     <div class="text-grey-500 text-center text-3xl">Fetching Data</div>
@@ -50,6 +50,7 @@ export default {
       const data = await this.fetchCovidData()
       this.title = 'Global'
       this.stats = data.Global
+      // location.reload()
     }
   },
   async created() {
